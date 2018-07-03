@@ -1,0 +1,32 @@
+
+
+spring:
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  profiles:
+    active: dev
+  http:
+    multipart:
+      max-file-size: 30Mb
+      max-request-size: 30Mb
+  devtools:
+    restart:
+      enabled: true
+server:
+  port: 9001
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*Mapper.xml
+  type-aliases-package: com.*.entity
+  global-config:
+      id-type: 0
+      field-strategy: 2
+      db-column-underline: true
+      capital-mode: true
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
